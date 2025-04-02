@@ -1,4 +1,4 @@
---Services
+
 getgenv().runService = game:GetService"RunService"
 getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
@@ -367,12 +367,12 @@ library.createToggle = function(option, parent)
 			if not library.warning and not library.slider then
 				if option.style then
 					tickbox.ImageColor3 = library.flags["Menu Accent Color"]
-					--tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = library.flags["Menu Accent Color"]}):Play()
+					
 				else
 					tickbox.BorderColor3 = library.flags["Menu Accent Color"]
 					tickboxOverlay.BorderColor3 = library.flags["Menu Accent Color"]
-					--tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
-					--tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
+					
+					
 				end
 			end
 			if option.tip then
@@ -394,12 +394,12 @@ library.createToggle = function(option, parent)
 		if input.UserInputType.Name == "MouseMovement" then
 			if option.style then
 				tickbox.ImageColor3 = Color3.new()
-				--tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.new()}):Play()
+				
 			else
 				tickbox.BorderColor3 = Color3.new()
 				tickboxOverlay.BorderColor3 = Color3.new()
-				--tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.new()}):Play()
-				--tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.new()}):Play()
+				
+				
 			end
 			library.tooltip.Position = UDim2.new(2)
 		end
@@ -781,7 +781,7 @@ library.createSlider = function(option, parent)
 			library.tooltip.Position = UDim2.new(2)
 			if option ~= library.slider then
 				option.slider.BorderColor3 = Color3.new()
-				--option.fill.BorderColor3 = Color3.new()
+				
 			end
 		end
 	end)
@@ -1292,7 +1292,7 @@ end
 library.createColorPickerWindow = function(option)
 	option.mainHolder = library:Create("TextButton", {
 		ZIndex = 4,
-		--Position = UDim2.new(1, -184, 1, 6),
+		
 		Size = UDim2.new(0, option.trans and 200 or 184, 0, 264),
 		BackgroundColor3 = Color3.fromRGB(40, 40, 40),
 		BorderColor3 = Color3.new(),
@@ -1360,7 +1360,7 @@ library.createColorPickerWindow = function(option)
 
 	option.hexBox = option.rgbBox:Clone()
 	option.hexBox.Position = UDim2.new(0, 6, 0, 238)
-	-- option.hexBox.Size = UDim2.new(0, (option.mainHolder.AbsoluteSize.X/2 - 10), 0, 20)
+	
 	option.hexBox.Parent = option.mainHolder
 	option.hexInput = option.hexBox.TextBox;
 
@@ -1976,7 +1976,7 @@ function library:AddTab(title, pos)
 				option.values = typeof(option.values) == "table" and table.clone(option.values) or {}
 				option.callback = typeof(option.callback) == "function" and option.callback or function() end
 				option.multiselect = typeof(option.multiselect) == "boolean" and option.multiselect or false
-				--option.groupbox = (not option.multiselect) and (typeof(option.groupbox) == "boolean" and option.groupbox or false)
+				
 				option.value = option.multiselect and (typeof(option.value) == "table" and table.clone(option.value) or {}) or tostring(option.value or option.values[1] or "")
 				if option.multiselect then
 					for i,v in next, option.values do
